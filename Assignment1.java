@@ -350,42 +350,72 @@ public class Assignment1 {
                     System.out.print("Invalid index. Please insert a valid index.\nIndex Placement: ");
                     idx = sc.nextInt();
                 }
+
+                // print a message to the user indicating the new string that was created
                 System.out.println("\nNew String: " + addSubstring(in, sub, idx) + "\n");
             }
 
+            // implementation of the getLength method
             else if (input == 4) {
+
+                // prompt the user for a string
                 System.out.print("\nEnter String: ");
+
+                // get and store the user's input from the scanner
                 String in = "";
                 while (in.equals("")) {
                     in = sc.nextLine();
                 }
+
+                // print a message to the user indicating the number of characters in their string
                 System.out.println("\nYour string has a length of " + getLength(in) + " characters.\n");
             }
 
+            // implementation of the occurrenceCounter method
             else if (input == 5) {
+
+                // prompt the user for the first string
                 System.out.print("\nEnter String: ");
+
+                // get and store the user's input from the scanner
                 String in = "";
                 while (in.equals("")) {
                     in = sc.nextLine();
                 }
+
+                // prompt the user for the second string
                 System.out.print("Enter String to Look For: ");
+
+                // get and store the user's input from the scanner
                 String sub = "";
                 while (sub.equals("")) {
                     sub = sc.nextLine();
                 }
+
+                // print a message to the user letting them know how many times the substring was found
                 System.out.println("\nThe substring \'" + sub + "\' appears in the string \'" + in + "\' " + Integer.toString(occurrenceCounter(in, sub)) + " times.\n");
             }
 
+            // implementation of the sentenceReversal method
             else if (input == 6) {
+
+                // prompt the user for a sentence
                 System.out.print("\nEnter Sentence: ");
+                
+                // get and store the user's input from the scanner
                 String in = "";
                 while (in.equals("")) {
                     in = sc.nextLine();
                 }
+
+                // print a message to the user showing the reverse of their sentence
                 System.out.println("\n The reverse of that sentence is \'" + sentenceReversal(in) + "\'.\n");
             }
 
+            // implementation of quitting the application
             else if (input == 7) {
+
+                // wish the user a nice day, close the scanner, and break out of the infinite loop
                 System.out.println("\nHave a nice day :)\n");
                 sc.close();
                 break;

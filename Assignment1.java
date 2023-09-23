@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -268,8 +269,23 @@ public class Assignment1 {
             // present the options to the user after every time they run a method
             System.out.print("1. Palindrome Check\n2. Anagram Check\n3. Add Substring\n4. Get Length\n5. Count Occurrences\n6. Reverse Sentence\n7. Quit\n\nChoose an Option: ");
             
-            // user the scanner to determine which method to run
-            int input = sc.nextInt();
+            // user the scanner to determine which method to run and catch any inputs that are not integers
+            int input = -1;
+            boolean isValid = false;
+
+            while (!isValid) {
+                try {
+                    // keep trying to set the input until a valid integer is given, at which point the loop will be broken
+                    input = sc.nextInt();
+                    isValid = true;
+                } catch (InputMismatchException e) {
+                    // print an invalid response statement to the user and reprompt them
+                    System.out.print("Invalid Option. Please select a valid number between 1 and 7.\nChoose an Option: ");
+                } finally {
+                    // get rid of the next line character that is left in the scanner's buffer
+                    sc.nextLine();
+                }
+            }
 
             // implementation of the palindromeIterative method
             // Using palindromeIterative here instead of palindromeRecursive since it will take less memory
@@ -313,10 +329,10 @@ public class Assignment1 {
 
                 // print a message to the user depending on the result of the method
                 if (anagramChecker(x, y) == true) {
-                    System.out.println("\n" + x + " and " + y + " are anagrams of one another!\n");
+                    System.out.println("\n\'" + x + "\' and \'" + y + "\' are anagrams of one another!\n");
                 }
                 else {
-                    System.out.println("\n" + x + " and " + y + " are not anagrams of one another.\n");
+                    System.out.println("\n\'" + x + "\' and \'" + y + "\' are not anagrams of one another.\n");
                 }
             }
 

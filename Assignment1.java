@@ -98,8 +98,7 @@ public class Assignment1 {
 
     /**
      * Returns true if one string is an anagram of the other
-     * If the two strings are the same length, this method has a big-O time complexity of O(n^2), where n is the length of either String
-     * If the two strings are different lengths, this method has a big-O time complexity of O(n), where n is the length of the longer String
+     * In the worst-case, this method has a big-O time complexity of O(n^2), where n is the length of either String
      * @param x  first string to compare
      * @param y  second string to compare
      * @return  true if one string is the anagram of another
